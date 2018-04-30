@@ -8,6 +8,9 @@ android:
   - extra-android-m2repository
 script:
 - "./gradlew testDebugUnitTest"
+- "./gradlew assembleRelease"
+after_script:
+ - curl -u "slavromanov1:WkwqGwu9oSSqHgnkDPnq" -X POST "https://api.browserstack.com/app-automate/upload" -F "file=./app/build/outputs/apk/release/app-release.apk"
 before_install:
 - chmod +x gradlew
 - yes | sdkmanager "platforms;android-27"
