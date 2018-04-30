@@ -53,3 +53,16 @@ google-services.json
 freeline.py
 freeline/
 freeline_project_description.json
+test-app/gradle/wrapper/gradle-wrapper.properties
+test-app/gradle/wrapper/gradle-wrapper.jar
+test-app/.idea/runConfigurations.xml
+test-app/.idea/modules.xml
+test-app/.idea/misc.xml
+test-app/.idea/gradle.xml
+test-app/.idea/encodings.xml
+test-app/.idea/compiler.xml
+.idea/misc.xml
+.idea/encodings.xml
+.idea/compiler.xml
+.idea/vcs.xml
+.idea/modules.xml
