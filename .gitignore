@@ -66,3 +66,14 @@ test-app/.idea/compiler.xml
 .idea/compiler.xml
 .idea/vcs.xml
 .idea/modules.xml
+
+*.iml
+.gradle
+/local.properties
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
