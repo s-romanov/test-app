@@ -5,7 +5,11 @@ android:
   - platform-tools
   - build-tools-26.0.2
   - android-26
+   # Additional components
+  - extra-google-google_play_services
+  - extra-google-m2repository
   - extra-android-m2repository
+  - addon-google_apis-google-26
 script:
 - "./gradlew testDebugUnitTest"
 - "./gradlew assembleRelease"
@@ -22,3 +26,8 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
+
+addons:
+  browserstack:
+    username: "slavromanov1"
+    access_key: "WkwqGwu9oSSqHgnkDPnq"
