@@ -14,7 +14,6 @@ script:
 - "./gradlew testDebugUnitTest"
 - "./gradlew assembleRelease"
 after_script:
-- sudo chmod +x ./travis/pull_data.sh
 - ./travis/pull_data.sh
 - curl -u "slavromanov1:WkwqGwu9oSSqHgnkDPnq" -X POST "https://api.browserstack.com/app-automate/upload" -F "file=@./app/build/outputs/apk/release/app-release.apk"
 before_install:
@@ -29,8 +28,3 @@ cache:
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
   - "node_modules"
-
-addons:
-  browserstack:
-    username: "slavromanov1"
-    access_key: "WkwqGwu9oSSqHgnkDPnq"
