@@ -3,16 +3,12 @@ language: android
 android:
   components:
   - platform-tools
-  - build-tools-26.0.1
+  - build-tools-26.0.2
   - android-26
-      # Additional components
-     - extra-google-google_play_services
-     - extra-google-m2repository
-     - extra-android-m2repository
-     - addon-google_apis-google-26
+  - extra-android-m2repository
 
-before_script:
-   - npm install
+#before_script:
+ #  - npm install
 script:
 - "./gradlew testDebugUnitTest"
 - "./gradlew assembleRelease"
@@ -29,8 +25,8 @@ cache:
   - "$HOME/.gradle/caches/"
   - "$HOME/.gradle/wrapper/"
   - "$HOME/.android/build-cache"
-  - "node_modules"
-addons:
-  browserstack:
-    username: "slavromanov1"
-    access_key: "WkwqGwu9oSSqHgnkDPnq"
+ # - "node_modules"
+#addons:
+ # browserstack:
+  #  username: "slavromanov1"
+   # access_key: "WkwqGwu9oSSqHgnkDPnq"
