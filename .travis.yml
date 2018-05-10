@@ -1,4 +1,4 @@
-install true
+install: true
 language: android
 android:
   components:
