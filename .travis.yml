@@ -1,7 +1,13 @@
-install: true
-language: android
-node_js:
- - "7"
+matrix:
+  include:
+  - language: node_js
+  node_js:
+   - "7"
+   before_script:
+     - npm install
+     script:
+     - "npm test"
+- language: android
 android:
   components:
       - build-tools-26.0.2
@@ -9,10 +15,8 @@ android:
       - sys-img-armeabi-v7a-android-tv-l
       - add-on
       - extra
-before_script:
-  - npm install
+
 script:
-- "npm test"
 - "./gradlew testDebugUnitTest"
 - "./gradlew assembleRelease"
 after_script:
