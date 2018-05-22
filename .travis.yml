@@ -1,5 +1,7 @@
 install: true
 language: android
+node_js:
+ - "7"
 android:
   components:
       - build-tools-26.0.2
@@ -7,14 +9,20 @@ android:
       - sys-img-armeabi-v7a-android-tv-l
       - add-on
       - extra
+before_script:
+  - npm install
 script:
+- "npm test"
 - "./gradlew testDebugUnitTest"
 - "./gradlew assembleRelease"
 after_script:
-- sudo chown -R travis ./travis/pull_data.sh
-- sudo chmod +x ./travis/pull_data.sh
-- ./travis/pull_data.sh
-- curl -u "slavromanov1:WkwqGwu9oSSqHgnkDPnq" -X POST "https://api.browserstack.com/app-automate/upload" -F "file=@./app/build/outputs/apk/release/app-release.apk"
+#- sudo chown -R travis ./travis/retrieve_tests.bash
+#- sudo chmod +x ./travis/retrieve_tests.sh
+
+#- "./scripts/retrieve_tests.sh"
+#- "./tests/run-tests.bash tests $TRAVIS_BUILD_DIR/app/build/outputs/apk/release/app-release.apk"
+
+#- curl -u "slavromanov1:WkwqGwu9oSSqHgnkDPnq" -X POST "https://api.browserstack.com/app-automate/upload" -F "file=@./app/build/outputs/apk/release/app-release.apk"
 before_install:
 - chmod +x gradlew
 - yes | sdkmanager "platforms;android-27"
